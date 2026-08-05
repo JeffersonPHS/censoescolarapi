@@ -1,4 +1,5 @@
-[
+{
+    "instituicaes": [
     {
         "co_entidade":25133683,
         "no_uf":"Paraíba",
@@ -660,3 +661,4 @@
         "qt_mat_esp":110
     }
 ]
+}
