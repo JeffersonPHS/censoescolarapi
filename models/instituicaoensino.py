@@ -1,5 +1,4 @@
 from marshmallow import Schema, fields, validate
-from datetime import datetime
 
 
 class InstituicaoEnsino:
@@ -21,10 +20,7 @@ class InstituicaoEnsino:
         qt_mat_prof,
         qt_mat_eja,
         qt_mat_esp,
-        id=None,
-        created=None
     ):
-        self.id = id
         self.no_entidade = no_entidade
         self.co_entidade = co_entidade
         self.no_uf = no_uf
@@ -40,9 +36,6 @@ class InstituicaoEnsino:
         self.qt_mat_prof = qt_mat_prof
         self.qt_mat_eja = qt_mat_eja
         self.qt_mat_esp = qt_mat_esp
-        if (created is not None):
-            created = datetime.fromisoformat(created)
-        self.created = created
 
 
 class InstituicaoEnsinoCompactoSchema(Schema):
@@ -77,7 +70,7 @@ class InstituicaoEnsinoCompactoSchema(Schema):
 
 class InstituicaoEnsinoSchema(Schema):
 
-    id = fields.Int(dump_only=True)
+  
 
     no_entidade = fields.Str(
         required=True,
@@ -152,6 +145,4 @@ class InstituicaoEnsinoSchema(Schema):
         validate=validate.Range(min=0)
     )
 
-    created = fields.DateTime(
-        dump_only=True
-    )
+
